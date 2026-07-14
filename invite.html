@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600;700;800;900&family=Pacifico&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="invitation-body">
+  <div class="invite-bg" id="inviteBg"></div>
+  <div class="decor-layer" id="decorLayer" aria-hidden="true"></div>
+
+  <div class="yt-player-shell" aria-hidden="true">
+    <div id="yt-player"></div>
+  </div>
+
+  <button class="music-control" id="musicControl" type="button">♪ Pausar música</button>
+
+  <section class="open-screen" id="openScreen">
+    <div class="open-card">
+      <span class="open-kicker">Invitación especial</span>
+      <div class="envelope-open" aria-hidden="true">
+        <div class="env-back"></div>
+        <div class="env-flap"></div>
+        <div class="env-front"></div>
+        <div class="env-seal" id="sealText">✦</div>
+      </div>
+      <h1 id="openTitle">Tu invitación está lista</h1>
+      <p>Toca para abrir el sobre, activar la música y comenzar la experiencia.</p>
+      <button class="btn btn-primary btn-open" id="openInvitationBtn" type="button">Abrir invitación</button>
+    </div>
+  </section>
+
+  <main class="invite-main" id="inviteMain">
+    <section class="invite-hero reveal-invite">
+      <div class="invite-hero-content">
+        <span class="invite-kicker" id="heroKicker">Ven a celebrar con nosotros</span>
+        <h1 id="heroTitle">Reunión Promoción 85</h1>
+        <p id="heroText">Te invitamos a compartir una noche especial.</p>
+
+        <div class="countdown-label" id="countLabel">Faltan solo:</div>
+        <div class="big-countdown" id="bigCountdown">
+          <div><strong id="days">00</strong><span>Días</span></div>
+          <div><strong id="hours">00</strong><span>Horas</span></div>
+          <div><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+      </div>
+      <div class="scroll-cue">Desliza para ver más ↓</div>
+    </section>
+
+    <section class="invite-story">
+      <div class="slideshow-frame reveal-invite" id="slideshowFrame">
+        <div class="photo-placeholder">Fotografías del evento</div>
+      </div>
+
+      <div class="invite-info-panel reveal-invite">
+        <span class="script-word" id="scriptWord">Celebremos</span>
+        <p id="mainInviteText">Te invitamos a compartir una noche especial, para reencontrarnos, recordar buenos momentos y crear nuevas memorias juntos.</p>
+        <h2 id="priceLine">Inversión $70.00</h2>
+        <div class="invite-details">
+          <article><b>Fecha</b><span id="detailDate">26 de septiembre</span></article>
+          <article><b>Hora</b><span id="detailTime">6:00 p.m.</span></article>
+          <article><b>Lugar</b><span id="detailPlace">Hotel Barceló</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="invite-gallery reveal-invite">
+      <div class="gallery-heading">
+        <span class="invite-kicker">Momentos especiales</span>
+        <h2 id="galleryTitle">Una celebración para recordar</h2>
+      </div>
+      <div class="invite-photo-wall" id="invitePhotoWall"></div>
+    </section>
+
+    <section class="animal-impact reveal-invite">
+      <span>🐾</span>
+      <p>Al comprar una tarjeta ayudas a la fundación <strong>Dame tu pata</strong> a rescatar animales en situación de riesgo.</p>
+    </section>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/invite.js"></script>
+</body>
+</html>
