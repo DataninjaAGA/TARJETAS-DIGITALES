@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitaciones Digitales | MVP</title>
+  <meta name="description" content="Crea invitaciones digitales animadas con fotos, música de YouTube y countdown." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600;700;800;900&family=Pacifico&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="site-body">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Ir al inicio">
+      <span class="brand-mark">✦</span>
+      <span>Invita<span>Click</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="#plantillas">Plantillas</a>
+      <a href="#crear">Crear</a>
+      <a href="#ayuda">Ayuda animal</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="site-hero">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+      <div class="hero-copy">
+        <span class="eyebrow">MVP estático para GitHub Pages</span>
+        <h1>Invitaciones digitales con música, fotos y cuenta regresiva.</h1>
+        <p>
+          Selecciona una plantilla, sube hasta 5 fotos, agrega una canción de YouTube y genera una invitación animada lista para compartir.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#crear">Crear invitación demo</a>
+          <a class="btn btn-ghost" href="#plantillas">Ver plantillas</a>
+        </div>
+      </div>
+      <div class="hero-phone" aria-hidden="true">
+        <div class="phone-shell template-boda">
+          <div class="phone-notch"></div>
+          <div class="mini-envelope">💍</div>
+          <h3>Nuestra Boda</h3>
+          <p>Amor, luces y celebración</p>
+          <div class="mini-count"><span>24</span><span>08</span><span>19</span></div>
+          <div class="mini-photos"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plantillas" class="section templates-section">
+      <div class="section-title">
+        <span class="eyebrow">7 estilos iniciales</span>
+        <h2>Plantillas del MVP</h2>
+        <p>Diseños responsivos pensados para verse bien en móvil, computadora y al compartir por WhatsApp.</p>
+      </div>
+      <div class="template-grid" id="templateGrid"></div>
+    </section>
+
+    <section id="ayuda" class="impact-strip">
+      <div>
+        <span>🐾</span>
+        <strong>Al comprar una tarjeta ayudas a la fundación Dame tu pata a rescatar animales en situación de riesgo.</strong>
+      </div>
+    </section>
+
+    <section id="crear" class="section builder-section">
+      <div class="section-title compact">
+        <span class="eyebrow">Crear invitación</span>
+        <h2>Generador demo</h2>
+        <p>Esta versión funciona sin Firebase ni Wompi. Guarda la invitación temporalmente en tu navegador para que puedas visualizar el producto en GitHub Pages.</p>
+      </div>
+
+      <div class="builder-layout">
+        <form class="builder-form" id="builderForm">
+          <fieldset>
+            <legend>1. Selecciona plantilla</legend>
+            <label for="templateSelect">Plantilla</label>
+            <select id="templateSelect" name="template" required></select>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Información del evento</legend>
+            <label for="eventTitle">Título de la invitación</label>
+            <input id="eventTitle" name="eventTitle" type="text" maxlength="70" required value="Nuestra Boda" />
+
+            <label for="inviteText">Texto de invitación</label>
+            <textarea id="inviteText" name="inviteText" maxlength="260" rows="4" required>Te invitamos a acompañarnos en el inicio de nuestra nueva historia y a celebrar con nosotros una noche llena de amor, alegría y momentos inolvidables.</textarea>
+
+            <div class="form-grid two">
+              <div>
+                <label for="eventDate">Fecha</label>
+                <input id="eventDate" name="eventDate" type="date" required value="2026-09-26" />
+              </div>
+              <div>
+                <label for="eventTime">Hora de inicio</label>
+                <input id="eventTime" name="eventTime" type="time" required value="18:00" />
+              </div>
+            </div>
+
+            <div class="form-grid two">
+              <div>
+                <label for="endTime">Hora de finalización</label>
+                <input id="endTime" name="endTime" type="time" value="00:00" />
+              </div>
+              <div>
+                <label for="place">Lugar</label>
+                <input id="place" name="place" type="text" maxlength="90" required value="Hotel Barceló" />
+              </div>
+            </div>
+
+            <label for="priceText">Detalle de inversión o entrada</label>
+            <input id="priceText" name="priceText" type="text" maxlength="80" value="Inversión $70.00" />
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Fotos</legend>
+            <label for="photos">Sube hasta 5 fotografías</label>
+            <input id="photos" name="photos" type="file" accept="image/*" multiple />
+            <p class="field-help">Para la demo se comprimen y guardan temporalmente en tu navegador. En producción se guardarán en Firebase Storage.</p>
+            <div class="upload-preview" id="uploadPreview"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Música</legend>
+            <label for="youtubeUrl">Link de YouTube</label>
+            <input id="youtubeUrl" name="youtubeUrl" type="url" placeholder="https://www.youtube.com/watch?v=Gs069dndIYk" value="https://www.youtube.com/watch?v=Gs069dndIYk" />
+
+            <label for="songStart">Segundo donde inicia la canción</label>
+            <input id="songStart" name="songStart" type="number" min="0" max="9999" value="10" />
+            <p class="field-help">Algunos videos de YouTube no permiten reproducción embebida. En ese caso se deberá probar otro enlace autorizado.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Correo y pago</legend>
+            <label for="email">Correo para recibir la invitación</label>
+            <input id="email" name="email" type="email" required placeholder="cliente@correo.com" />
+
+            <div class="price-card">
+              <span>Precio de lanzamiento</span>
+              <strong>$2.99</strong>
+              <small>Modo demo: aún no cobra ni envía correo.</small>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Generar enlace demo</button>
+            <button class="btn btn-ghost" type="button" id="resetBtn">Limpiar</button>
+          </div>
+        </form>
+
+        <aside class="live-preview" aria-label="Vista previa">
+          <div class="preview-toolbar">
+            <span>Vista previa</span>
+            <button type="button" id="previewBtn">Abrir preview</button>
+          </div>
+          <div class="invite-preview-card" id="miniPreview">
+            <div class="preview-badge">Demo</div>
+            <h3 id="previewTitle">Nuestra Boda</h3>
+            <p id="previewText">Te invitamos a compartir una noche especial...</p>
+            <div class="preview-countdown"><span>00</span><span>00</span><span>00</span><span>00</span></div>
+            <div class="preview-details" id="previewDetails">26 de septiembre · 6:00 p.m. · Jardín de Eventos</div>
+          </div>
+          <div class="preview-note">
+            <strong>Nota:</strong> el enlace demo funciona en este navegador. Cuando conectemos Firebase, el enlace será público y compartible por WhatsApp.
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="resultModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <span class="eyebrow">Invitación creada</span>
+      <h2 id="modalTitle">Tu enlace demo está listo</h2>
+      <p>Abre la invitación para revisar diseño, música, fotos y countdown. En producción este enlace se enviará al correo después del pago.</p>
+      <input id="generatedLink" readonly />
+      <div class="modal-actions">
+        <a class="btn btn-primary" id="openGeneratedLink" target="_blank" rel="noopener">Abrir invitación</a>
+        <button class="btn btn-ghost" id="copyLinkBtn" type="button">Copiar link</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/templates.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
